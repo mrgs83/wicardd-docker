@@ -7,4 +7,4 @@ First, you need to SSH into your Unraid server or open the terminal on the Unrai
 Then use the following command: 
 
 ```bash
-curl -L https://raw.githubusercontent.com/mrgs83/wicardd-docker/main//wicardd-x64.xml -o /boot/config/plugins/dockerMan/templates-user/my-wicardd-template.xml
+curl -L https://raw.githubusercontent.com/mrgs83/wicardd-docker/main//wicardd-x64.xml -o /boot/config/plugins/dockerMan/templates-user/my-wicardd-x64-template.xml
