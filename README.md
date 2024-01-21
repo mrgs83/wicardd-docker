@@ -8,8 +8,9 @@ Then use the following command to download tamplate:
 
 ```bash
 mkdir -p /mnt/user/appdata/wicardd && curl -L https://raw.githubusercontent.com/mrgs83/wicardd-docker/main/wicardd.conf -o /mnt/user/appdata/wicardd/wicardd.conf && curl -L https://raw.githubusercontent.com/mrgs83/wicardd-docker/main//wicardd-x64.xml -o /boot/config/plugins/dockerMan/templates-user/my-wicardd-x64-template.xml
-
+```
 Before you start Wicardd-x64 server please edit wicardd.conf:
 
 ```bash
 nano /mnt/user/appdata/wicardd/wicardd.conf
+```
