@@ -1,37 +1,30 @@
-# Use a specific Ubuntu version as a base for consistency
+# Use Ubuntu 20.04 as a base image
 FROM ubuntu:20.04
 
-# Set the maintainer label
-LABEL maintainer="info@mrgs.link"
+# Set maintainer information
+LABEL maintainer="info@example.com"
 
-# Set environment variables to prevent prompts and define version
-ENV DEBIAN_FRONTEND=noninteractive \
-    SATIP_SERVER_VERSION=1.3.1
+# Avoid interactive prompts during build
+ENV DEBIAN_FRONTEND=noninteractive
 
-    
-# Update and install necessary tools
+# Install necessary dependencies
 RUN apt-get update && apt-get install -y \
     git \
-    libtool \
-    htop \
     nano \
     curl \
     net-tools \
     libssl-dev \
     libdvbcsa-dev \
-    && rm -rf /var/lib/apt/lists/* # Clean up apt cache to reduce image size
+    && rm -rf /var/lib/apt/lists/* # Clean up
 
-# Copy wicardd binary and config
-COPY wicardd.conf /usr/bin/tuxbox/
+# Copy the wicardd binaries and configuration file
+COPY wicardd-x64.* wicardd.conf start.sh /usr/local/bin/
 
-# Set the working directory to /satip_streamer
-WORKDIR /usr/bin/
-COPY wicardd-* /usr/bin/
-COPY start.sh /usr/bin/
-RUN chmod +x /usr/bin/wicardd-* && chmod +x /usr/bin/start.sh
+# Set permissions for the binaries and script
+RUN chmod +x /usr/local/bin/wicardd-x64.* /usr/local/bin/start.sh
 
-# Expose necessary ports
+# Expose the ports used by wicardd
 EXPOSE 8888 9000 50000
 
-# Set the CMD for the container to use the start.sh script
-CMD ["./start.sh"]
+# Use the start.sh script to run the application
+CMD ["/usr/local/bin/start.sh"]
