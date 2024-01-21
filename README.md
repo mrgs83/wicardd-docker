@@ -4,6 +4,9 @@ To download the file wicardd-latest.xml from GitHub directly to the default temp
 
 First, you need to SSH into your Unraid server or open the terminal on the Unraid web interface. 
 
-Then use the following command: curl -L https://raw.githubusercontent.com/mrgs83/wicardd-docker/main/wicardd-latest.xml -o /boot/config/plugins/dockerMan/templates-user/my-wicardd-template.xml
+Then use the following command: 
+
+```bash
+curl -L https://raw.githubusercontent.com/mrgs83/wicardd-docker/main/wicardd-latest.xml -o /boot/config/plugins/dockerMan/templates-user/my-wicardd-template.xml
 
 
