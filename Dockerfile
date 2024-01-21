@@ -17,8 +17,13 @@ RUN apt-get update && apt-get install -y \
     libdvbcsa-dev \
     && rm -rf /var/lib/apt/lists/* # Clean up
 
-# Copy the wicardd binaries and configuration file
-COPY wicardd-x64.* wicardd.conf start.sh /usr/local/bin/
+# Create a config directory
+RUN mkdir /config
+
+# Copy the wicardd binaries to /usr/local/bin and config to /config
+COPY wicardd-x64.* /usr/local/bin/
+COPY wicardd.conf /config/
+COPY start.sh /usr/local/bin/
 
 # Set permissions for the binaries and script
 RUN chmod +x /usr/local/bin/wicardd-x64.* /usr/local/bin/start.sh
