@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>satip_streamer</Name>
+  <Name>wicardd</Name>
   <Repository>mrgs83/wicardd-docker:latest</Repository>
   <Registry>https://github.com/mrgs83/wicardd-docker/</Registry>
   <Network>br0</Network>
@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/mrgs83/wicardd-docker/issues</Support>
   <Project>https://github.com/mrgs83/wicardd-docker/</Project>
-  <Overview>satip_streamer-v1.3 (https://github.com/mrgs83/wicardd-docker/) wicardd-docker.</Overview>
+  <Overview>Wicardd Docker Container. This container runs wicardd for SAT>IP streaming.</Overview>
   <Category>WicarddServer:Wicardd Server:Other Other:Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8888]</WebUI>
   <TemplateURL/>
@@ -24,9 +24,9 @@
   <Config Name="WebUI-admin" Target="8888" Default="8888" Mode="tcp" Description="Status Page WebUI" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
   <Config Name="Port: 9000" Target="9000" Default="9000" Mode="tcp" Description="DVBapi stream" Type="Port" Display="always" Required="true" Mask="false">9000</Config>
   <Config Name="Port: 50000" Target="50000" Default="50000" Mode="tcp" Description="newcamd" Type="Port" Display="always" Required="true" Mask="false">50000</Config>
-  <Config Name="RUN_OPTS" Target="RUN_OPTS" Default="" Mode="{3}" Description="Specify specific run params for minisatip" Type="Variable" Display="always" Required="true" Mask="false">-c wicardd.conf</Config>
-  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/wicardd" Mode="rw" Description="Configuration files and wicardd data" Type="Path" Display="advanced" Required="true" Mask="false">/usr/bin/tuxbox/</Config>
-  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
-  <Config Name="UMASK" Target="UMASK" Default="022" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
+  <Config Name="RUN_OPTS" Target="RUN_OPTS" Default="wicardd-x64.1.19" Mode="tcp" Description="Choose the wicardd version to run (e.g., wicardd-x64.1.19)" Type="Variable" Display="always" Required="true" Mask="false">wicardd-x64.1.19</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/wicardd" Mode="rw" Description="Configuration files and wicardd data" Type="Path" Display="advanced" Required="true" Mask="false">/config</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="User ID for file permission management" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="Group ID for file permission management" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="022" Mode="{3}" Description="UMASK for file creation" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
 </Container>
