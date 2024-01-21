@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  satip_streamer:
+    build:
+      context: .  # Specify the correct context path to your Dockerfile
+      dockerfile: Dockerfile  # Specify the correct Dockerfile name
+      ports:
+      - "8888:8888"
+      - "9000:9000"
+      - "50000:50000"
+    cap_add:
+      - NET_ADMIN
+    restart: always
