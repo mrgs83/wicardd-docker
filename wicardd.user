@@ -1,0 +1,13 @@
+[account]
+ active = 1
+ login=tuner-au1
+ password=tuner-au1
+ filter = dvb,dvb1
+ auto_update=1
+
+[account]
+ active = 1
+ login=tuner-no-au1
+ password=tuner-no-au1
+ filter = dvb,dvb1
+ auto_update=0
