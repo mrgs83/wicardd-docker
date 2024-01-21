@@ -4,13 +4,13 @@
   <Repository>mrgs83/wicardd-docker:latest</Repository>
   <Registry>https://github.com/mrgs83/wicardd-docker/</Registry>
   <Network>br0</Network>
-  <MyIP>10.0.30.231</MyIP>
+  <MyIP>192.168.1.231</MyIP>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/mrgs83/wicardd-docker/issues</Support>
   <Project>https://github.com/mrgs83/wicardd-docker/</Project>
-  <Overview>Wicardd Docker Container. This container runs wicardd for SAT>IP streaming.</Overview>
-  <Category>WicarddServer:Wicardd Server:Other Other:Tools:Utilities</Category>
+  <Overview>Wicardd Docker Container.</Overview>
+  <Category>WicarddServer:Wicardd x64 Server:Other Other:Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8888]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/mrgs83/logos/main/wicardd.png</Icon>
@@ -19,7 +19,7 @@
   <CPUset/>
   <DateInstalled>1698177979</DateInstalled>
   <DonateText>Donations</DonateText>
-  <DonateLink>https://www.mrgs.link/donate</DonateLink>
+  <DonateLink>https://mrgs.link/donate</DonateLink>
   <Requires/>
   <Config Name="WebUI-admin" Target="8888" Default="8888" Mode="tcp" Description="Status Page WebUI" Type="Port" Display="always" Required="true" Mask="false">8888</Config>
   <Config Name="Port: 9000" Target="9000" Default="9000" Mode="tcp" Description="DVBapi stream" Type="Port" Display="always" Required="true" Mask="false">9000</Config>
