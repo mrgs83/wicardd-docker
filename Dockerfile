@@ -12,10 +12,6 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # Update and install necessary tools
 RUN apt-get update && apt-get install -y \
     git \
-    gcc \
-    make \
-    autoconf \
-    automake \
     libtool \
     htop \
     nano \
@@ -23,15 +19,13 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     libssl-dev \
     libdvbcsa-dev \
-    dvb-apps \
-    uuid-runtime \
     && rm -rf /var/lib/apt/lists/* # Clean up apt cache to reduce image size
+
+# Copy wicardd binary and config
+COPY wicardd.conf /usr/bin/tuxbox/
 
 # Set the working directory to /satip_streamer
 WORKDIR /usr/bin/
-
-# Copy wicardd binary and config
-COPY wicardd.conf /usr/bin/
 COPY wicardd-* /usr/bin/
 COPY start.sh /usr/bin/
 RUN chmod +x /usr/bin/wicardd-* && chmod +x /usr/bin/start.sh
